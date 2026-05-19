@@ -2,10 +2,10 @@
 Data for the 2026 Bundibugyo Ebola outbreak in the DRC.
 
 # Data sources
-**DRC health zones:** [Humanitarian Data Exchange](https://data.humdata.org/dataset/drc-health-data) (MoH zones de santé shapefile)
-**Driving times:** [OSRM](http://project-osrm.org/) public demo
-**Conflicts and acts of violence:** [ACLED](https://acleddata.com)
-**Internal displacements:** International Organisation for Migrants ([IOM](https://dtm.iom.int))
+- **DRC health zones:** [Humanitarian Data Exchange](https://data.humdata.org/dataset/drc-health-data) (MoH zones de santé shapefile)
+- **Driving times:** [OSRM](http://project-osrm.org/) public demo
+- **Conflicts and acts of violence:** [ACLED](https://acleddata.com)
+- **Internal displacements:** International Organisation for Migrants ([IOM](https://dtm.iom.int))
 
 # Citation
 Please cite the original data providers (links above) and this repository if any code or derived data is reused.
