@@ -1,5 +1,5 @@
-# Bundibugyo Ebola virus outbreak, Ituri, Democratic Republic of the Congo
-Data and scripts for visual summaries of the 2026 Bundibugyo Ebola outbreak in Ituri, DRC.
+# Bundibugyo Ebola virus outbreak, Democratic Republic of the Congo
+Data for the 2026 Bundibugyo Ebola outbreak in the DRC.
 
 # Data sources
 **DRC health zones:** [Humanitarian Data Exchange](https://data.humdata.org/dataset/drc-health-data) (MoH zones de santé shapefile)
