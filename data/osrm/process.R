@@ -116,17 +116,8 @@ message("Processing Complete. Preview of Duration Matrix:")
 print(full_dur_matrix[1:5, 1:5])
 
 # Save results
-write.csv(full_dur_matrix, "data/healthzone_traveldisttime/RDC_Full_Travel_Time_Minutes.csv")
-write.csv(full_dist_matrix_km, "data/healthzone_traveldisttime/RDC_Full_Road_Distance_Km.csv")
+write.csv(full_dur_matrix, "data/osrm/processed/osrm__travel_time__static.csv")
+write.csv(full_dist_matrix_km, "data/osrm/processed/osrm__road_distance__static.csv")
 
 message("Files saved to working directory.")
-
-
-# ---------------------------- 7. Plot matrices --------------------------------
-
-full_dur_matrix <- read.csv("data/healthzone_traveldisttime/RDC_Full_Travel_Time_Minutes.csv")
-full_dist_matrix_km <- read.csv("data/healthzone_traveldisttime/RDC_Full_Road_Distance_Km.csv")
-
-
-
 
