@@ -34,6 +34,9 @@ We are tracking pending data sources over on the [issues tab](https://github.com
 
 Snapshot of `build/drc_health_zones.geojson` (519 zones, \~25 MB) and the matrix catalogue, at commit `99ee96c`. Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
 
+<!-- whats-new:start -->
+<!-- whats-new:end -->
+
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below):
 
 | Folder | Output | Retrieved | Status |
@@ -65,6 +68,13 @@ Snapshot of `build/drc_health_zones.geojson` (519 zones, \~25 MB) and the matrix
 **OSRM** (`data/osrm/`): pairwise **car** travel time (minutes) and road distance (km) between health zones via the [OSRM](http://project-osrm.org/) public API. Missing routes (e.g. Idjwi island) are stored as `NA` and may surface as QA **warn**; they are not embedded in the GeoJSON.
 
 **Not in build**: `ACLED_conflict` — province-grain placeholder, no QA-passing output yet.
+
+## Past releases
+
+<!-- past-releases:start -->
+| Tag | Date | Summary | Download |
+|-----|------|---------|----------|
+<!-- past-releases:end -->
 
 # Repository layout
 
