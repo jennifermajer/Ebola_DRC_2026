@@ -141,5 +141,8 @@ colnames(full_dur_matrix_2) <- c("nom", full_dur_matrix_2$X)
 full_dist_matrix_km_2 <- read.csv("data/osrm/processed/osrm__road_distance__static.matrix.csv") 
 colnames(full_dist_matrix_km_2) <- c("nom", full_dist_matrix_km_2$X)
 
+write.csv(full_dur_matrix_2, "data/osrm/processed/osrm__travel_time__static.matrix.csv", row.names = F)
+write.csv(full_dist_matrix_km_2, "data/osrm/processed/osrm__road_distance__static.matrix.csv", row.names = F)
+
 message("Files saved to working directory.")
 
