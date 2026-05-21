@@ -1,9 +1,9 @@
 # Bundibugyo Ebola virus outbreak 2026
-Data for the 2026 Bundibugyo Ebolavirus (BDBV) outbreak.
-
 <img align="right" src="docs/inrb_logo.jpeg" width=170px>
 
-This work is led by INRB (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola) in collaboration with partners across the University of Oxford and Northeastern University; please contact m.davebengo@gmail.com for further information.
+Data for the 2026 Bundibugyo Ebolavirus (BDBV) outbreak.
+
+This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola) in collaboration with partners across the University of Oxford and Northeastern University; please contact m.davebengo@gmail.com for further information.
 
 # Data sources
 - **DRC health zones:** [Humanitarian Data Exchange](https://data.humdata.org/dataset/drc-health-data) (MoH zones de santé shapefile)
