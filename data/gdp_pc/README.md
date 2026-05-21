@@ -35,11 +35,10 @@ The dataset provides harmonised, gap-filled **GDP per capita at purchasing power
 | File | Description |
 |------|-------------|
 | `processed/gdp_pc__gdp_pc__static.csv` | Repo contract: `nom`, `gdp_pc` (519 rows) |
-| `processed/COD-2022-gdp_pc.zs.nc` | Intermediate NetCDF (`gdp_pc` by `ZSCode`) |
+| `raw/COD-2022-gdp_pc.zs.nc` | Intermediate NetCDF (`gdp_pc` by `ZSCode`) |
 | `gdp_pc_processed_plot.png` | Choropleth of GDP per capita |
 | `process.R` | Join NetCDF to shapefile, plot, write CSV |
 | `metadata.yaml` | Provenance, licence, and pipeline notes |
-| `raw/` | Reserved for raw downloads (currently empty) |
 
 **Coverage:** 519 health zones (national).  
 **Temporal scope:** **2022** (single time layer in the committed NetCDF).
@@ -103,7 +102,6 @@ Overwrites:
 | **Static year** | Single **2022** snapshot; not a 1990–2022 time series in the contract CSV. |
 | **Grid → zone** | Values depend on zonal aggregation from admin-2 / 5 arc-minute grids to health-zone polygons. |
 | **PPP base year** | Figures are in **2017 international USD (PPP)**; not current nominal USD. |
-| **Duplicate `nom`** | Two zones named **Bili** and two **Lubunga**; use `ZSCode` for unambiguous joins. |
 | **Pipeline in flux** | Raw download and DARTS processing are not fully in-repo; NetCDF is the current source of truth. |
 
 ---
