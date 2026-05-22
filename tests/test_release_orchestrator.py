@@ -190,6 +190,32 @@ def test_preflight_fails_when_gh_missing(tmp_path):
     assert "gh" in result.stderr.lower()
 
 
+def test_preflight_accepts_qa_reports_dirty(tmp_path):
+    """qa/reports/*.md are legitimate QA outputs — must not trigger 'unrelated dirty paths'."""
+    _seed_repo(tmp_path)
+    _init_git(tmp_path)
+    # After init, dirty up a qa/reports/*.md file (didn't exist before init)
+    (tmp_path / "qa" / "reports").mkdir(exist_ok=True)
+    (tmp_path / "qa" / "reports" / "foo.md").write_text("# foo report\n")
+
+    editor_body = (
+        "#!/usr/bin/env bash\n"
+        "cat > \"$1\" <<EOF\n"
+        "Smoke run.\n"
+        "EOF\n"
+    )
+    bin_dir, _ = _install_stubs(tmp_path, editor_body=editor_body)
+
+    result = _run_release(
+        tmp_path,
+        bin_dir=bin_dir,
+        editor=bin_dir / "fake-editor",
+    )
+    # We don't care about the full result here, only that preflight didn't fire
+    # the "unrelated dirty paths" check.
+    assert "unrelated uncommitted changes" not in result.stderr
+
+
 def test_preflight_fails_on_unrelated_dirty_paths(tmp_path):
     _seed_repo(tmp_path)
     _init_git(tmp_path)

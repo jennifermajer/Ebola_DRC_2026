@@ -161,7 +161,7 @@ build/
     -   open `$EDITOR` to capture a "what's new" description for the new build
     -   update `README.md` (current-build pointers + Past releases log)
 
-    Then `git add build/ qa/*.csv README.md && git commit && git push` to land the new build alongside its description.
+    Then `git add build/ qa/*.csv qa/reports/ README.md && git commit && git push` to land the new build alongside its description.
 
     Use `tools.build_geojson` (not `tools.release`) for normal local iteration — `tools.release` is only for cutting versioned snapshots.
 

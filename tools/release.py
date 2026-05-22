@@ -39,7 +39,14 @@ DESCRIPTION = BUILD_DIR / "DESCRIPTION.md"
 README = REPO_ROOT / "README.md"
 DIST_DIR = REPO_ROOT / "dist"
 
-ALLOWLIST_PREFIXES = ("build/", "qa/qa_log.csv", "qa/matrix_log.csv", "README.md", "dist/")
+ALLOWLIST_PREFIXES = (
+    "build/",
+    "qa/qa_log.csv",
+    "qa/matrix_log.csv",
+    "qa/reports/",
+    "README.md",
+    "dist/",
+)
 
 
 def _eprint(msg: str) -> None:
@@ -239,7 +246,7 @@ def main() -> int:
 
     _eprint("")
     _eprint("Next: review the changes, then")
-    _eprint("  git add build/ qa/qa_log.csv qa/matrix_log.csv README.md")
+    _eprint("  git add build/ qa/qa_log.csv qa/matrix_log.csv qa/reports/ README.md")
     _eprint("  git commit -m \"New build YYYY-MM-DD\"")
     _eprint("  git push")
     return 0
