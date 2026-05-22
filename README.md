@@ -94,8 +94,7 @@ Snapshot of `build/drc_health_zones.geojson` (519 zones, **25** embedded vector 
 
 | Tag / ref | Date | Summary | Download |
 |-----------|------|---------|----------|
-| `main` @ [`3e1e714`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/3e1e714ad800d0002cb3a5d2e1c926a61105e61a) | 2026-05-22 | **Current build:** 25 vector layers; INSP through SitRep 007 + GRID3 health facilities | [tree](https://github.com/kraemer-lab/Ebola_DRC_2026/tree/3e1e714/build) |
-| [`3260f62`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/3260f627fcb67b60f72966183a88a2395b630e30) | 2026-05-22 | Prior snapshot: INSP through SitRep 006 + GRID3 (first combined GeoJSON build) | [tree](https://github.com/kraemer-lab/Ebola_DRC_2026/tree/3260f62/build) |
+| [`build-2026-05-22-12db0c2`](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) | 2026-05-22 | **Current build:** 25 vector layers; INSP through SitRep 007 + GRID3 health facilities | [release](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) |
 | [`build-2026-05-22-9694d10`](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-9694d10) | 2026-05-22 | First GitHub release (11 vector layers; pre-INSP / pre-GRID3) | [release](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-9694d10) |
 
 <!-- past-releases:end -->
