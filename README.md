@@ -37,19 +37,12 @@ We are tracking pending data sources over on the [issues tab](https://github.com
 Snapshot of `build/drc_health_zones.geojson` (519 zones, \~25 MB) and the matrix catalogue, at commit `8259588` (`built_at` in `build/manifest.json`). Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
 
 <!-- whats-new:start -->
+**22 May 2026 (commit `8259588`)**
+- **`insp_sitrep`** — twelve daily INSP SitRep MVE metrics embedded in the GeoJSON (latest report `date` per zone; outbreak-affected zones only).
+- **`grid3_healthsites`** — national health-facility count and density per zone (GRID3 COD v8.0) embedded alongside `healthsites_io`.
+<!-- whats-new:end -->
 
-**22 May 2026 (commit `8259588`)** - **`insp_sitrep`** — twelve daily health-zone tables from INSP SitRep MVE reports (suspected/confirmed cases and deaths, contact tracing); QA-passing; embed on next GeoJSON build (latest report date per zone). - **`grid3_healthsites`** — national health-facility count and density per zone from GRID3 COD v8.0; QA **warn** until CSV export drops the R row-index column (`row.names=FALSE` in `process.R`). <!-- whats-new:end -->
-
-### New on `main` (not yet in the archived GeoJSON snapshot)
-
-| Folder | Processed outputs | GeoJSON build |
-|----|----|----|
-| `insp_sitrep` | 12 × `insp_sitrep__*__daily.csv` (e.g. `new_suspected_cases`, `cumulative_confirmed_cases`, `contacts_seen`) | QA **pass** — run `tools.build_geojson` to merge (latest `date` per zone under `feature.properties.insp_sitrep.<metric>`) |
-| `grid3_healthsites` | `grid3_healthsites__healthsite_count__static.csv`, `grid3_healthsites__healthsite_density__static.csv` | QA **warn** (spurious `X` column from `write.csv`) — fix export, then rebuild |
-
-See `data/insp_sitrep/README.md` and `data/grid3_healthsites/README.md` for provenance and CSV contracts.
-
-**Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below):
+**Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
 
 | Folder | Output | Retrieved | Status |
 |----|----|----|----|
@@ -59,8 +52,22 @@ See `data/insp_sitrep/README.md` and `data/grid3_healthsites/README.md` for prov
 | epi | `epi__cases__weekly.csv` | 2026-05-18 | active |
 | fao_lccs | `fao_lccs__urban_fraction__static.csv` | 2026-05-20 | active |
 | gdp_pc | `gdp_pc__gdp_pc__static.csv` | 2026-05-20 | active |
+| grid3_healthsites | `grid3_healthsites__healthsite_count__static.csv` | 2026-05-20 | active |
+| grid3_healthsites | `grid3_healthsites__healthsite_density__static.csv` | 2026-05-20 | active |
 | healthsites_io | `healthsites_io__healthsite_count__static.csv` | 2026-05-20 | active |
 | healthsites_io | `healthsites_io__healthsite_density__static.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__contacts_seen__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_confirmed_cases__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_confirmed_deaths__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_contacts_isolated__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_contacts_traced__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_suspected_cases__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__cumulative_suspected_deaths__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__new_confirmed_cases__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__new_contacts_isolated__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__new_contacts_listed__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__new_suspected_cases__daily.csv` | 2026-05-20 | active |
+| insp_sitrep | `insp_sitrep__new_suspected_deaths__daily.csv` | 2026-05-20 | active |
 | refugee_sites | `refugee_sites__sites__static.csv` | 2026-05-20 | active |
 | worldpop | `worldpop__pop_count__static.csv` | 2026-05-20 | active |
 | worldpop | `worldpop__pop_density__static.csv` | 2026-05-20 | active |
@@ -79,11 +86,11 @@ See `data/insp_sitrep/README.md` and `data/grid3_healthsites/README.md` for prov
 
 **OSRM** (`data/osrm/`): pairwise **car** travel time (minutes) and road distance (km) between health zones via the [OSRM](http://project-osrm.org/) public API. Missing routes (e.g. Idjwi island) are stored as `NA` and may surface as QA **warn**; they are not embedded in the GeoJSON.
 
-**INSP sitreps** (`data/insp_sitrep/`): complements `data/epi/` (WHO weekly external sitrep) with **daily** INSP-internal reporting for outbreak-affected zones only; values use `ND` where a metric was not reported on that date.
+**INSP sitreps** (`data/insp_sitrep/`): complements `data/epi/` (WHO weekly external sitrep) with **daily** INSP-internal reporting; embedded under `feature.properties.insp_sitrep.<metric>` for outbreak-affected zones only (7–8 zones per metric in the current snapshot). Values use `ND` where a metric was not reported on that date. Full time series: `build/long/insp_sitrep__*.csv`.
 
-**GRID3 health facilities** (`data/grid3_healthsites/`): MoH/partner facility master list (\~38k points), generally more complete than `healthsites_io` (OSM-only, filtered subset).
+**GRID3 health facilities** (`data/grid3_healthsites/`): MoH/partner facility master list (\~38k points), generally more complete than `healthsites_io` (OSM-only, filtered subset); count and density embedded for all 519 zones.
 
-**Not in build**: `ACLED_conflict` — province-grain placeholder, no QA-passing output yet. `grid3_healthsites` and `insp_sitrep` are in the repo but not in the current `build/drc_health_zones.geojson` until the steps in the table above.
+**Not in build**: `ACLED_conflict` — province-grain placeholder, no QA-passing output yet.
 
 ## Past releases
 
