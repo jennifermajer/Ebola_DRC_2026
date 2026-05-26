@@ -10,7 +10,7 @@ These data complement the WHO weekly external sitreps in `data/epi/` by providin
 
 **Publisher:** [Institut National de Santé Publique (INSP)](https://insp.cd/), Democratic Republic of the Congo.
 
-**Series:** SitRep **MVE** (maladie à virus Ebola / outbreak situation reports), numbered `001`, `002`, `004`, `005`, `006` for 2026 in the committed `raw/` folder.
+**Series:** SitRep **MVE** (maladie à virus Ebola / outbreak situation reports), numbered `001`, `002`, `004`–`010` for 2026 in the committed `raw/` folder (**003** not in repo).
 
 **Extraction method:** Values are **manually coded** from PDF tables and narrative sections. There is no automated PDF parser in this folder yet.
 
@@ -27,18 +27,22 @@ These data complement the WHO weekly external sitreps in `data/epi/` by providin
 
 | File | Description |
 |-----------------------|-------------------------------------------------|
-| `processed/insp_sitrep__*__daily.csv` | Twenty-three repo-contract tables (see below) |
-| `raw/SitRep_MVE_001:2026.pdf` | Situation report 001 |
-| `raw/SitRep_MVE_002:2026.pdf` | Situation report 002 |
-| `raw/SitRep_MVE_004:2026.pdf` | Situation report 004 (**003** not in repo) |
-| `raw/SitRep_MVE_005:2026.pdf` | Situation report 005 |
-| `raw/SitRep_MVE_006:2026.pdf` | Situation report 006 |
+| `processed/insp_sitrep__*__daily.csv` | Twenty-four repo-contract tables (see below) |
+| `raw/SitRep_MVE_001-2026.pdf` | Situation report 001 |
+| `raw/SitRep_MVE_002-2026.pdf` | Situation report 002 |
+| `raw/SitRep_MVE_004-2026.pdf` | Situation report 004 (**003** not in repo) |
+| `raw/SitRep_MVE_005-2026.pdf` | Situation report 005 |
+| `raw/SitRep_MVE_006-2026.pdf` | Situation report 006 |
+| `raw/SitRep_MVE_007-2026.pdf` | Situation report 007 |
+| `raw/SitRep_MVE_008-2026.pdf` | Situation report 008 |
+| `raw/SitRep_MVE_009-2026.pdf` | Situation report 009 |
+| `raw/SitRep_MVE_010-2026.pdf` | Situation report 010 |
 | `process.R` | Normalise `nom` in all processed CSVs to canonical shapefile names |
 | `metadata.yaml` | Provenance, licence, and pipeline notes |
 
 **Coverage:** Health zones **with a row in at least one processed file** (outbreak-affected subset; not all 519 national zones).
 
-**Temporal scope:** Report dates **2026-05-14** through **2026-05-23** in the current commit (grows as new sitreps are added).
+**Temporal scope:** Report dates **2026-05-14** through **2026-05-24** in the current commit (grows as new sitreps are added). Some older extracts use `M/D/YY` in `date`; newer PoE tables use ISO `YYYY-MM-DD` — prefer ISO when adding rows.
 
 ------------------------------------------------------------------------
 
@@ -78,6 +82,7 @@ For this folder: **`insp_sitrep__<metric>__daily.csv`**.
 | `insp_sitrep__new_hosp_admissions__daily.csv` | `new_all_admissions` | New admissions (all categories) |
 | `insp_sitrep__new_hosp_detainees__daily.csv` | `new_hosp_detainees` | New detainee admissions |
 | `insp_sitrep__new_hosp_other__daily.csv` | `new_other` | New admissions (other categories) |
+| `insp_sitrep__hosp_escaped__daily.csv` | `escaped` | Patients who escaped from hospitalisation on report date |
 
 ### Points of entry (PoE)
 
@@ -92,7 +97,7 @@ Zone-level totals only (one row per `nom` and `date`; per-site PoE breakdown is 
 | `insp_sitrep__total_poe_refused_screening__daily.csv` | `total_poe_refused_screening` | Total refused screening |
 | `insp_sitrep__total_poe_refused_hand_washing__daily.csv` | `total_poe_refused_hand_washing` | Total refused hand washing |
 
-**Zones in current data (canonical `nom`):** Adi, Aru, Bambu, Bunia, Butembo, Goma, Katwa, Kilo, Komanda, Mahagi, Mangala, Miti-Murhesa, Mongbalu, Nizi, Nyakunde, Rwampara, Tchomia.
+**Zones in current data (canonical `nom`):** Adi, Aru, Bambu, Bunia, Butembo, Goma, Kalunguta, Karisimbi, Katwa, Kilo, Komanda, Kyondo, Mahagi, Mangala, Miti-Murhesa, Mongbalu, Nizi, Nyakunde, Oicha, Rwampara, Tchomia.
 
 ------------------------------------------------------------------------
 
@@ -140,7 +145,7 @@ Join to other datasets on **`nom`**, or on **`ZSCode`** from the shapefile when 
 `process.R` rewrites `nom` in every `processed/insp_sitrep__*__daily.csv` to match the **same canonical contract** as Python QA and `tools/build_geojson`:
 
 1.  Load `data/shapefiles/DRC_Health_zones.shp` and build 519 canonical names (province suffix for duplicate `Nom` values, currently **Bili** and **Lubunga**).
-2.  Load `data/aliases.csv` and map observed labels to canonical `nom` (shared across datasets; e.g. `Mongbwalu` → `Mongbalu`, `Nyankunde` → `Nyakunde`, `Ada` → `Adi`).
+2.  Load `data/aliases.csv` and map observed labels to canonical `nom` (shared across datasets; e.g. `Mongbwalu` → `Mongbalu`, `Nyankunde` → `Nyakunde`, `Karissibi` → `Karisimbi`).
 3.  Overwrite each processed CSV in place (`row.names = FALSE`, unquoted UTF-8).
 
 The script **stops with an error** if any `nom` cannot be resolved, or if two rows share the same (`nom`, `date`) after mapping. Add a row to `data/aliases.csv` (with `source_dataset: insp_sitrep` in the notes column) before re-running.
@@ -179,7 +184,7 @@ After a new sitrep:
 | **Manual transcription** | Values depend on human reading of PDF tables; verify against source PDFs before release. |
 | **Partial national coverage** | Only zones reported in INSP sitreps appear; absence of a zone is not evidence of zero cases. |
 | **`ND` cells** | Not all metrics are published for every zone on every date; do not impute without source confirmation. |
-| **Name variants** | Transcribe PDF labels first; unresolved names require new rows in `data/aliases.csv`, then `process.R`. |
+| **Name variants** | Transcribe PDF labels first; unresolved names require new rows in `data/aliases.csv` (e.g. `Karissibi` → `Karisimbi`), then `process.R`. |
 | **Missing sitrep 003** | `SitRep_MVE_003:2026.pdf` is not in `raw/`; date series may have gaps between 002 and 004. |
 | **Date semantics** | `date` is the sitrep **report date**, not necessarily onset or specimen collection date. |
 | **No confirmed-death “new” file** | Only cumulative confirmed deaths are exported; add `new_confirmed_deaths` if sitreps report it consistently. |
