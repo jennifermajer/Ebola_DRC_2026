@@ -66,7 +66,7 @@ to_canonical <- function(name, canonical_noms, alias_index) {
   if (name %in% canonical_noms) {
     return(name)
   }
-  if (!is.null(alias_index[[name]])) {
+  if (name %in% names(alias_index)) {
     return(unname(alias_index[[name]]))
   }
   NA_character_

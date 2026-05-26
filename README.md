@@ -2,11 +2,7 @@
 
 Data for the 2026 Bundibugyo Ebolavirus (BDBV) outbreak.
 
-<p align="center">
-
-<img src="docs/inrb_logo_2.jpeg" width="24%"/> <img src="docs/inoha.jpeg" width="24%"/> <img src="docs/insp.jpeg" width="24%"/> <img src="docs/inrb_extra.jpeg" width="24%"/>
-
-</p>
+![Logos for Project Lead Organizations: Institute National de Recherche Biomedicale (INRB), One Health Institute for Africa (INOHA), Institut National de Santé Publique (INSP), and Unité de Modélisation et Intelligence Epidémique (UMIE)](https://scarpino.github.io/files/drc_logos.png)
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
@@ -34,7 +30,7 @@ We are tracking pending data sources over on the [issues tab](https://github.com
 
 # Current build (2026-05-25)
 
-Snapshot of `build/drc_health_zones.geojson` (519 zones, **25** embedded vector layers, \~26 MB) and the matrix catalogue. Built **22 May 2026, 18:27:39 (UTC)** from data at commit `493d506`; artifacts on `main` in [`235a3c3`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/235a3c34f97aeb54b48a9ea447ee21ed33057cb4) (*QA checks and new build for sitrep 007*), merged at [`3e1e714`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/3e1e714ad800d0002cb3a5d2e1c926a61105e61a). Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
+Snapshot of `build/drc_health_zones.geojson` (519 zones, **25** embedded vector layers, \~26 MB) and the matrix catalogue. **25 May 2026, 11:12:07 (UTC)** — `build/` on `main` at commit [`913be1e`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/913be1e0fd0e42aa7018c0bd322fa7eb8f729533) (data snapshot [`913be1e`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/913be1e), see `build/manifest.json`). Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
 
 <!-- whats-new:start -->
 
@@ -155,7 +151,7 @@ build/
 
 2.  Make sure your processed filenames match the contract above. Add any name aliases your data uses to `data/aliases.csv`.
 
-3.  Sync with main using `git merge origin`. This is important, as if anyone else has made changes (e.g. adding a dataset), their QA reports will reflect a different timestamp to what your current branch expects on main, resulting in a lot of conflicts after you run the QA tests in the next step.
+3.  Sync with main using `git merge origin/main`. This is important, as if anyone else has made changes (e.g. adding a dataset), their QA reports will reflect a different timestamp to what your current branch expects on main, resulting in a lot of conflicts after you run the QA tests in the next step.
 
 4.  Run unit tests + QA locally:
 
