@@ -6,7 +6,7 @@ Data for the 2026 Bundibugyo Ebolavirus (BDBV) outbreak.
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
-Last successful build: **26 May 2026, 09:59:00 (UTC)** — `build/` on `main` at commit [`683a564`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/683a564fe31b812f284f0cecee8abf7e85faa146) (data snapshot [`683a564`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/683a564), see `build/manifest.json`).
+Last successful build: **26 May 2026, 15:53:57 (UTC)** — `build/` on `main` at commit [`0973277`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/097327791ac6c50502c58f915ee1770da8619a2f) (data snapshot [`0973277`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/0973277), see `build/manifest.json`).
 
 # Data sources
 
@@ -30,15 +30,11 @@ We are tracking pending data sources over on the [issues tab](https://github.com
 
 # Current build (2026-05-26)
 
-Snapshot of `build/drc_health_zones.geojson` (519 zones, **25** embedded vector layers, \~26 MB) and the matrix catalogue. **26 May 2026, 09:47:13 (UTC)** — `build/` on `main` at commit [`ad7f46c`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/ad7f46cac54a35f219d4c7939a5e4f12862dcc1f) (data snapshot [`ad7f46c`](https://github.com/kraemer-lab/Ebola_DRC_2026/commit/ad7f46c), see `build/manifest.json`). Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
+Re-run `python -m tools.build_geojson` after pulling to regenerate locally; `build/manifest.json` carries the same information in machine-readable form.
 
 <!-- whats-new:start -->
 
--   INSP Sitrep data through report 010
-
--   First release officially hosted by INRB
-
-<!-- whats-new:end -->
+test <!-- whats-new:end -->
 
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
 
@@ -91,8 +87,8 @@ Snapshot of `build/drc_health_zones.geojson` (519 zones, **25** embedded vector 
 <!-- past-releases:start -->
 
 | Tag | Date | Summary | Download |
-|----------------|----------------|-------------------|----------------------|
-| [`build-2026-05-26-ad7f46c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-26-ad7f46c) | 2026-05-26 | First INRB release on 26 May 2026, includes SitRep 010 | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-26-ad7f46c) |
+|-----------------|-----------------|------------------|---------------------|
+| build-2026-05-26-683a564 | 2026-05-26 | INSP Sitrep data through report 010 | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-26-683a564) |
 | [`build-2026-05-22-12db0c2`](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) | 2026-05-22 | 25 vector layers; INSP through SitRep 007 + GRID3 health facilities | [release](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) |
 | [`build-2026-05-22-9694d10`](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-9694d10) | 2026-05-22 | First GitHub release (11 vector layers; pre-INSP / pre-GRID3) | [release](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-9694d10) |
 
