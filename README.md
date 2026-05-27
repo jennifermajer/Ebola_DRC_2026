@@ -6,7 +6,7 @@
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
-Last successful build: **27 May 2026, 10:58:13 (UTC)** — `build/` on `main` at commit [`af1f2b5`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/af1f2b5c10c1fa3b24bc2614cebc708a10d65ae8) (data snapshot [`af1f2b5`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/af1f2b5), see `build/manifest.json`).
+Last successful build: **27 May 2026, 14:33:35 (UTC)** — `build/` on `main` at commit [`059661a`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/059661aa16db4dd60774d2ac7a8b53f732e99796) (data snapshot [`059661a`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/059661a), see `build/manifest.json`).
 
 # Data sources
 
@@ -33,10 +33,7 @@ We are tracking pending data sources over on the [issues tab](https://github.com
 The current build is committed on `main` and refreshed automatically by CI on every merge that touches `data/**` — see [Release internals](#release-internals). Run `python -m tools.build_geojson` locally only if you're working on a branch with un-merged data changes.
 
 <!-- whats-new:start -->
-- Added the updated DRC totals from SitRep 12 to a new metric for that dataset with prefix national_*
-- Sitrep 12 does not currently have healthzone level data, but it has been requested that the dashboard gets updated with the country totals
-- Perhaps not the ideal format (solution right now is that every healthzone has a metric called 'national' with the same national total per date, it's just the easiest way to get it on the dashboard at present
-- Also fixing a small discrepancy in SitRep 10 for cumulative suspected cases
+- Updated INSP Sitrep data with the new version of Sitrep 12 (Updated national suspected deaths)
 <!-- whats-new:end -->
 
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
@@ -92,6 +89,7 @@ The current build is committed on `main` and refreshed automatically by CI on ev
 <!-- past-releases:start -->
 | Tag | Date | Summary | Download |
 |-----|------|---------|----------|
+| [`build-2026-05-27-059661a`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-059661a) | 2026-05-27 | - Updated INSP Sitrep data with the new version of Sitrep 12 (Updated national suspected deaths) | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-059661a) |
 | [`build-2026-05-27-af1f2b5`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-af1f2b5) | 2026-05-27 | - Added the updated DRC totals from SitRep 12 to a new metric for that dataset with prefix national_* | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-af1f2b5) |
 | build-2026-05-26-683a564 | 2026-05-26 | INSP Sitrep data through report 010 | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-26-683a564) |
 | [`build-2026-05-22-12db0c2`](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) | 2026-05-22 | 25 vector layers; INSP through SitRep 007 + GRID3 health facilities | [release](https://github.com/kraemer-lab/Ebola_DRC_2026/releases/tag/build-2026-05-22-12db0c2) |
