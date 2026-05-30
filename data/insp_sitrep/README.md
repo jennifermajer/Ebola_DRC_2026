@@ -27,6 +27,7 @@ These data complement WHO weekly external sitreps in `data/epi/` with **INSP-int
 | `SitRep_MVE_010-2026.pdf` | 010    |
 | `SitRep_MVE_011-2026.pdf` | 011    |
 | `SitRep_MVE_012_2026.pdf` | 012    |
+| `SitRep_MVE_013_2026.pdf` | 013    |
 
 **Not in repo:** `SitRep_MVE_003-2026.pdf` (gap between 002 and 004).
 
