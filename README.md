@@ -6,7 +6,7 @@
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
-Last successful build: **29 May 2026, 09:44:17 (UTC)** — `build/` on `main` at commit [`ff1e796`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/ff1e79620725976dfb2d9a84de132858cff6d2a1) (data snapshot [`ff1e796`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/ff1e796), see `build/manifest.json`).
+Last successful build: **30 May 2026, 09:26:15 (UTC)** — `build/` on `main` at commit [`5a34b18`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/5a34b18c1433878dd0d4fdcf4a4e63d202393928) (data snapshot [`5a34b18`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/5a34b18), see `build/manifest.json`).
 
 # Data sources
 
@@ -28,13 +28,13 @@ For the latest BDBV genomic data, please visit [Pathoplexus](https://pathoplexus
 
 We are tracking pending data sources over on the [issues tab](https://github.com/kraemer-lab/Ebola_DRC_2026/issues). If you want to request a specific publicly available dataset, raise an issue (although raising an issue does not guarantee that we will incorporate a dataset).
 
-# Current build (2026-05-29)
+# Current build (2026-05-30)
 
 The current build is committed on `main` and refreshed automatically by CI on every merge that touches `data/**` — see [Release internals](#release-internals). Run `python -m tools.build_geojson` locally only if you're working on a branch with un-merged data changes.
 
 ### What's New
 <!-- whats-new:start -->
-Sitrep 13 added.
+An additional data folder `flowminder_short_trips/` is created. This contains updated Flowminder data for short trips for April 2026 (see report in `data/raw/` for details). QA tests show warnings in unrelated `data/**` folders.
 <!-- whats-new:end -->
 
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
@@ -90,6 +90,7 @@ Sitrep 13 added.
 <!-- past-releases:start -->
 | Tag | Date | Summary | Download |
 |-----|------|---------|----------|
+| [`build-2026-05-30-5a34b18`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-30-5a34b18) | 2026-05-30 | An additional data folder `flowminder_short_trips/` is created. This contains updated Flowminder data for short trips for April 2026 (see report in `data/raw/` for details). QA tests show warnings in unrelated `data/**` folders. | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-30-5a34b18) |
 | [`build-2026-05-29-ff1e796`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-29-ff1e796) | 2026-05-29 | Sitrep 13 added. | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-29-ff1e796) |
 | [`build-2026-05-28-bb8b7d5`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-28-bb8b7d5) | 2026-05-28 | Updated to allocate a new suspected case from Mabanga (not a healthzone) to the Mambasa healthzone. Team at INRB reviewed and decided this is the most accurate place to put it for now, but let's note that there may also be a place called Mabanga in Mangala | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-28-bb8b7d5) |
 | [`build-2026-05-27-e40bc9e`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-e40bc9e) | 2026-05-27 | - Healthzone level wpi data up to 26th May from INSP (The public sitrep did not have this data) | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-27-e40bc9e) |
