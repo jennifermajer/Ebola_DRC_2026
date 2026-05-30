@@ -1,6 +1,6 @@
 # QA report: insp_sitrep
 
-_Checked: 2026-05-30T23:36:16+00:00_
+_Checked: 2026-05-30T23:48:12+00:00_
 
 **Status counts:** {'pass': 29}
 
