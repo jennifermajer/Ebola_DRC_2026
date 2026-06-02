@@ -6,7 +6,7 @@
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
-Last successful build: **2 June 2026, 06:31:18 (UTC)** — `build/` on `main` at commit [`d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/d1ceb9c5c3af073bed15d39ec768719cba10373f) (data snapshot [`d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/d1ceb9c), see `build/manifest.json`).
+Last successful build: **2 June 2026, 10:39:38 (UTC)** — `build/` on `main` at commit [`125e4e0`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/125e4e033fb6755ee7806e4bebc976d749672ec0) (data snapshot [`125e4e0`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/125e4e0), see `build/manifest.json`).
 
 # Data sources
 
@@ -34,9 +34,7 @@ The current build is committed on `main` and refreshed automatically by CI on ev
 
 ### What's New
 <!-- whats-new:start -->
-Sitrep 17 Added
-
-(In reality the commits in this PR are just fixing bugs in a Sitrep 17 push that went straight to main - but the release will be issued for the first time here)
+Report added for Sitrep 17 describing digitisation process
 <!-- whats-new:end -->
 
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
@@ -92,6 +90,7 @@ Sitrep 17 Added
 <!-- past-releases:start -->
 | Tag | Date | Summary | Download |
 |-----|------|---------|----------|
+| [`build-2026-06-02-125e4e0`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-125e4e0) | 2026-06-02 | Report added for Sitrep 17 describing digitisation process | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-125e4e0) |
 | [`build-2026-06-02-d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-d1ceb9c) | 2026-06-02 | Sitrep 17 Added | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-d1ceb9c) |
 | [`build-2026-06-01-b4cafc9`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-b4cafc9) | 2026-06-01 | Updates to SitReps 15 and 16 | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-b4cafc9) |
 | [`build-2026-06-01-0a87d65`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-0a87d65) | 2026-06-01 | - National level tables now just take the nom 'DRC' | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-0a87d65) |
