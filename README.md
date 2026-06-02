@@ -6,7 +6,7 @@
 
 This work is led by the Institut National de Recherche Biomédicale (INRB) Kinshasa/One Health Institute for Africa (INOHA) Kinshasa (Dav Ebengo, Placide Mbala-Kingebeni and Tania Bishola), and the Institut National de Santé Publique (INSP) (Pierre Akilimali, Adelard Lofungola) in collaboration with partners across the University of Oxford and Northeastern University; please contact [dav.ebengo\@umie-inrb.org](mailto:dav.ebengo@umie-inrb.org) or [pierre.akilimali\@insp.cd](mailto:pierre.akilimali@insp.cd) for further information.
 
-Last successful build: **1 June 2026, 22:17:17 (UTC)** — `build/` on `main` at commit [`b4cafc9`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/b4cafc95c2bf93718e748515fd71c4b04ef763a1) (data snapshot [`b4cafc9`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/b4cafc9), see `build/manifest.json`).
+Last successful build: **2 June 2026, 06:31:18 (UTC)** — `build/` on `main` at commit [`d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/d1ceb9c5c3af073bed15d39ec768719cba10373f) (data snapshot [`d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/d1ceb9c), see `build/manifest.json`).
 
 # Data sources
 
@@ -28,15 +28,15 @@ For the latest BDBV genomic data, please visit [Pathoplexus](https://pathoplexus
 
 We are tracking pending data sources over on the [issues tab](https://github.com/kraemer-lab/Ebola_DRC_2026/issues). If you want to request a specific publicly available dataset, raise an issue (although raising an issue does not guarantee that we will incorporate a dataset).
 
-# Current build (2026-06-01)
+# Current build (2026-06-02)
 
 The current build is committed on `main` and refreshed automatically by CI on every merge that touches `data/**` — see [Release internals](#release-internals). Run `python -m tools.build_geojson` locally only if you're working on a branch with un-merged data changes.
 
 ### What's New
 <!-- whats-new:start -->
-Updates to SitReps 15 and 16
-New alias for `Manguripa`<>`Mangudjeripa`
-Added `reports/` folder with detailed logs of individual digitisation decisions for SitReps 15 and 16.
+Sitrep 17 Added
+
+(In reality the commits in this PR are just fixing bugs in a Sitrep 17 push that went straight to main - but the release will be issued for the first time here)
 <!-- whats-new:end -->
 
 **Embedded in the GeoJSON** — each per-zone vector output appears under `feature.properties.<dataset>.<metric>` (matrices are excluded; see below). Daily series use the latest `date` per zone in the build snapshot:
@@ -92,6 +92,7 @@ Added `reports/` folder with detailed logs of individual digitisation decisions 
 <!-- past-releases:start -->
 | Tag | Date | Summary | Download |
 |-----|------|---------|----------|
+| [`build-2026-06-02-d1ceb9c`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-d1ceb9c) | 2026-06-02 | Sitrep 17 Added | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-02-d1ceb9c) |
 | [`build-2026-06-01-b4cafc9`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-b4cafc9) | 2026-06-01 | Updates to SitReps 15 and 16 | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-b4cafc9) |
 | [`build-2026-06-01-0a87d65`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-0a87d65) | 2026-06-01 | - National level tables now just take the nom 'DRC' | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-06-01-0a87d65) |
 | [`build-2026-05-30-507a2a2`](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-30-507a2a2) | 2026-05-30 | - Added sitrep 14 (in reality fix some issues with sitrep 14, but those issues aborted the earlier release so this is the first release with sitrep 14 anyway | [release](https://github.com/INRB-UMIE/Ebola_DRC_2026/releases/tag/build-2026-05-30-507a2a2) |
