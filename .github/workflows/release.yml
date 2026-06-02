@@ -126,7 +126,7 @@ jobs:
         if: steps.skip.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.DASHBOARD_DISPATCH_TOKEN }}
-          DASHBOARD_REPO: INRB-UMIE/EBOV2026_Epidemic_Dashboard
+          DASHBOARD_REPO: INRB-UMIE/BDBV2026-Epidemic_Dashboard
         run: |
           set -euo pipefail
           if [ -z "${GH_TOKEN}" ]; then
