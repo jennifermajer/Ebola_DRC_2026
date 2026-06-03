@@ -121,9 +121,21 @@ def _attach_vector(folder: Path, file_name: str, parsed, features_by_nom: dict[s
     src = folder / "processed" / file_name
     with src.open(newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
-        rows = [{k: v for k,v in row.items() if k != ""} for row in reader]
-    
-    fieldnames = list(rows[0].keys())
+        fieldnames = [k for k in (reader.fieldnames or []) if k != ""]
+        rows = [{k: v for k, v in row.items() if k != ""} for row in reader]
+
+    dataset_token = parsed.dataset
+    metric = parsed.metric
+
+    # Header-only placeholders pass QA but carry no attachable values yet.
+    if not rows:
+        LONG_DIR.mkdir(parents=True, exist_ok=True)
+        dst = LONG_DIR / f"{dataset_token}__{metric}.csv"
+        with dst.open("w", encoding="utf-8-sig") as fp:
+            writer = csv.DictWriter(fp, fieldnames=fieldnames)
+            writer.writeheader()
+        return 0
+
     date_col = next((c for c in DATE_COLUMN_CANDIDATES if c in fieldnames), None)
     value_cols = [c for c in fieldnames if c and c != "nom" and c != date_col]
 
@@ -143,8 +155,6 @@ def _attach_vector(folder: Path, file_name: str, parsed, features_by_nom: dict[s
         else:
             latest_per_nom[canonical] = r
 
-    dataset_token = parsed.dataset
-    metric = parsed.metric
     attached = 0
 
     def _apply_row(nom: str, r: dict) -> None:
