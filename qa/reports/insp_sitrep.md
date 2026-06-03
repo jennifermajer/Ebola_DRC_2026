@@ -1,6 +1,6 @@
 # QA report: insp_sitrep
 
-_Checked: 2026-06-03T21:01:34+00:00_
+_Checked: 2026-06-03T21:17:18+00:00_
 
 **Status counts:** {'pass': 31}
 
@@ -82,7 +82,7 @@ _Checked: 2026-06-03T21:01:34+00:00_
 - resolution: daily
 
 ## `insp_sitrep__national_suspected_cases_under_investigation__daily.csv` (vector) — **pass**
-- rows: 3
+- rows: 4
 - zones covered: 1 / 519
 - resolution: daily
 
