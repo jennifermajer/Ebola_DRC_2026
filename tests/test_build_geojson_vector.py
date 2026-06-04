@@ -105,3 +105,39 @@ def test_attach_vector_broadcasts_drc_to_all_zones(tmp_path, monkeypatch):
         val = feat["properties"]["insp_sitrep"]["national_cumulative_confirmed_cases"]
         assert val["national_cumulative_confirmed_cases"] == 121
         assert val["_date"] == "2026-05-24"
+
+
+def test_attach_vector_header_only_placeholder(tmp_path, monkeypatch):
+    folder = tmp_path / "public_health_response"
+    processed = folder / "processed"
+    long_dir = tmp_path / "long"
+    processed.mkdir(parents=True)
+
+    with open(
+        processed / "public_health_response__national_epidemiological_laboratory__daily.csv",
+        "w",
+        encoding="utf-8",
+    ) as fp:
+        fp.write("nom,date,national_laboratory\n")
+
+    monkeypatch.setattr(build_geojson, "LONG_DIR", long_dir)
+
+    attached = build_geojson._attach_vector(
+        folder,
+        "public_health_response__national_epidemiological_laboratory__daily.csv",
+        SimpleNamespace(
+            dataset="public_health_response",
+            metric="national_epidemiological_laboratory",
+        ),
+        {"Bunia": {"properties": {}}},
+    )
+
+    assert attached == 0
+    with open(
+        long_dir / "public_health_response__national_epidemiological_laboratory.csv",
+        newline="",
+        encoding="utf-8-sig",
+    ) as fp:
+        reader = csv.DictReader(fp)
+        assert reader.fieldnames == ["nom", "date", "national_laboratory"]
+        assert list(reader) == []
