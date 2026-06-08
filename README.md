@@ -15,24 +15,37 @@ This work is led by the Institut National de Recherche Biomédicale (INRB) Kinsh
 - Northeastern University, United States
 - University of Oxford, United Kingdom
 
-# Statement on continuing work and analyses before publication
+### Statement on continuing work and analyses before publication
 Please note that the epidemiological data presented here is based on work in progress and should be considered preliminary. Our analyses are ongoing, and a publication communicating our findings is in preparation. Contextual data are publicly accessible; please refer to the original license when re-using these data. If you intend to use the epidemiological data prior to our publication, or have other enquiries, please contact [Prof. Placide Mbala-Kingebeni](mailto:placide.mbala@inrb.cd) (INRB, DRC), [Prof. Dav Ebengo](mailto:dav.ebengo@umie-inrb.org) (INRB, DRC), and [Pierre Akilimali](mailto:pierre.akilimali@insp.cd) (INSP).
+
+# Most recent build
 
 Last successful build: **8 June 2026, 11:55:28 (UTC)** — `build/` on `main` at commit [`979a344`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/979a3444ec64e85f4f61bf8f0b484420a0c9685b) (data snapshot [`979a344`](https://github.com/INRB-UMIE/Ebola_DRC_2026/commit/979a344), see `build/manifest.json`).
 
 # Data sources
-
+### Geospatial
 -   **DRC health zones:** [Humanitarian Data Exchange](https://data.humdata.org/dataset/drc-health-data) (MoH zones de santé shapefile)
--   **Epidemiological data (Processed Linelists, INSP):** Following establishment of an epi data collection pipeline by INSP and INRB, aggregated linelist data will be housed in (`data/epi/`) - ETA for this by Friday 29th
--   **Epidemiological & operational data (INSP):** [Institut National de Santé Publique (INSP)](https://insp.cd/) SitRep MVE PDF series (`data/insp_sitrep/`, currently through **SitRep 018**) — daily case, death, and contact-tracing indicators by health zone **manually transcribed from the sitreps**
+
+### Epidemiological
+-   **Epidemiological data (INSP):** [Institut National de Santé Publique (INSP)](https://insp.cd/) SitRep MVE PDF series (`data/insp_sitrep/`, currently through **SitRep 023**) — daily case, death, and contact-tracing indicators by health zone **manually transcribed from the sitreps**
+-   **Processed Linelists:** Following establishment of an epi data collection pipeline by INSP and INRB, aggregated linelist data will be housed in (`data/epi/`)
+-   **Operational data (INSP):** [Institut National de Santé Publique (INSP)](https://insp.cd/) Contextual data on the public health response transcribed from SitRep MVE PDF series (`data/insp_sitrep/`, currently for **SitReps 020-023**, but backfilling is in progress) (`data/public_health_response`)
+-   **Testing Capacity (AfricaCDC):** data on PCR machine and reagent availability (`data/testing_capacity`)
+
+### Mobility
 -   **Road travel times:** [OSRM](http://project-osrm.org/) public demo (`data/osrm/`, matrix outputs)
 -   **Cross-border travel:** [Imperial College Report](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/research-themes/preparedness-and-response-to-emerging-threats/report-ebola-18-05-2026/)
--   **Conflicts and acts of violence:** [ACLED](https://acleddata.com)
 -   **Internal relocations:** International Organisation for Migrants ([IOM](https://dtm.iom.int))
--   **Population size rasters:** [GRID3 v4.4 gridded population](https://data.grid3.org/maps/a3db539c0fae4c05aed92ed67e11fe2b/about)
+-   **Mobile phone-based internal relocation estimates:** [Flowminder.org](https://www.flowminder.org/resources/publications-reports/drc-reports-publications) (`data/flowminder/` and `data/flowminder_short_trips/`)
+
+### Demographic
+-   **Conflicts and acts of violence:** [ACLED](https://acleddata.com) (`data/ACLED_conflict/`) - Not currently included in build 
+-   **Population counts:** [WorldPop](https://www.worldpop.org/) (`data/worldpop/`)
 -   **Health facilities (GRID3):** [GRID3 COD Health Facilities v8.0](https://data.grid3.org/datasets/GRID3::grid3-cod-health-facilities-v8-0/about) (`data/grid3_healthsites/`)
 -   **Health facilities (OSM / crowdsourced):** [Healthsites.io](https://healthsites.io/) (`data/healthsites_io/`)
--   **Mobile phone-based internal relocation estimates:** [Flowminder.org](https://www.flowminder.org/resources/publications-reports/drc-reports-publications)
+-   **Socioeconomic deprivation and inequality:** [Climate-Conflict Vulnerability Index](https://climate-conflict.org/www) (`data/ccvi/`)
+-   **Degree of Urbanisation:** [FAO Land Classification System](https://cds.climate.copernicus.eu/datasets/satellite-land-cover?tab=overview) (`data/fao_lccs/`)
+-   **GPD per capita:** [Kummu et. al](https://www.nature.com/articles/s41597-025-04487-x) (`data/gdp_pc/`)
 
 For the latest BDBV genomic data, please visit [Pathoplexus](https://pathoplexus.org/ebola-bdbv/search).
 
